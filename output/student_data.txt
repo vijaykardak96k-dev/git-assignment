@@ -1,0 +1,4 @@
+Welcome to Python File Handling!
+Name: Vijay
+Course: DevOps
+Topic: Python and Bash Assignment
