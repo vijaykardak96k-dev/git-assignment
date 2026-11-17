@@ -6,7 +6,12 @@
     },
     {
         "id": 2,
-        "name": "Rahul Sharma",
+        "name": "Rahul Verma",
         "email": "rahul@example.com"
+    },
+    {
+        "id": 3,
+        "name": "Vijay Kardak",
+        "email": "vijaykardak96k@gmail.com"
     }
 ]
