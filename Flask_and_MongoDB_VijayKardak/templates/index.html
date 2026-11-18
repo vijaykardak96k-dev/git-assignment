@@ -67,5 +67,19 @@
             <button type="submit">Submit Details</button>
         </form>
     </div>
+
+        <hr>
+        <h2>To-Do List</h2>
+        <form action="/submittodoitem" method="POST">
+            <input type="text" name="itemName"
+                   placeholder="Enter item name" required>
+
+            <textarea name="itemDescription"
+                      placeholder="Enter item description"
+                      required></textarea>
+
+            <button type="submit">Add To-Do</button>
+        </form>
+
 </body>
 </html>
