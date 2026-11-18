@@ -99,5 +99,32 @@ def get_users():
         return jsonify({"error": "Invalid JSON data"}), 500
 
 
+
+@app.route("/submittodoitem", methods=["POST"])
+def submit_todo_item():
+    item_name = request.form.get("itemName", "").strip()
+    item_description = request.form.get("itemDescription", "").strip()
+
+    if not item_name or not item_description:
+        return jsonify({"error": "Both fields are required"}), 400
+
+    try:
+        client.admin.command("ping")
+
+        result = db["todo_items"].insert_one({
+            "itemName": item_name,
+            "itemDescription": item_description,
+            "created_at": datetime.now(timezone.utc)
+        })
+
+        return jsonify({
+            "message": "To-Do item submitted successfully",
+            "id": str(result.inserted_id)
+        }), 201
+
+    except PyMongoError:
+        return jsonify({"error": "Database connection failed"}), 500
+
+
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=5000, debug=False)
