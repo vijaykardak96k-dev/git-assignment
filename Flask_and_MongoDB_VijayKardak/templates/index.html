@@ -70,7 +70,10 @@
 
         <hr>
         <h2>To-Do List</h2>
+
         <form action="/submittodoitem" method="POST">
+        <label for="itemId">Item ID</label>
+        <input type="number" id="itemId" name="itemId" placeholder="Enter Item ID" required>
             <input type="text" name="itemName"
                    placeholder="Enter item name" required>
 
